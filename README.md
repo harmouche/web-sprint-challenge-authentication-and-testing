@@ -26,11 +26,31 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
 
+Cryptographic Signatures
+JSON web tokens have cryptographic signatures, and that’s not the case with session cookies.
+
+JSON is Stateless
+JSON web tokens are stateless because claims are stored client-side, rather than in the server’s memory. Authentication can occur locally, instead of per request, where requests have to go through the server’s database, or similar locations. This means that a user can be authenticated multiple times without having to communicate with the site or app’s database, and without using up a lot of its resources in the process.
+
+Scalability
+Because session cookies are stored in the server’s memory, it has the potential of using a lot more resources if the website or app sees a lot of traffic. Because JSON web tokens are stateless, they can potentially save on server resources in many cases.This also means that JSON web tokens tend to be a lot more scalable as a result.
+
+Authentication Across Multiple Locations
+Session cookies only work across a single domain, or on its subdomains. If they try to go to a third party, browsers tend to disable them. This is particularly an issue if you want your website to have a secure connection with an API that uses a different domain.
+
+With JSON web tokens, you can authenticate a user across multiple locations including multiple domains, mobile devices, and APIs to name a few. This is because they’re stored locally in the request header.
+
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+bcrypt will take a password string and hash it into an encrypted password before saving it into a database.
 
 3. How are unit tests different from integration and end-to-end testing.
 
+unit tests test small blocks of code and make sure they perform as expected, because it is smaller it doesn't need much computing power as integration or end-to-end testing which will test all of the app functionalities. 
+
 4. How _Test Driven Development_ changes the way we write applications and tests.
+
+Test-driven development is an approach to development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
