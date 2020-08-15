@@ -1,4 +1,3 @@
-  
 const axios = require('axios');
 const Users = require('../users/model')
 const restricted = require('../auth/authenticate-middleware')
